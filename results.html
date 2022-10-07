@@ -5,12 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <!-- Why does the `<link>` to `style.css` have to come last? -->
-  <!-- Last reference shows up more recently -->
+ 
   <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css"> -->
   <link rel="stylesheet" href="./style.css" />
-  <title>Git it Done</title>
+  <title>Library Search Tool</title>
 </head>
 
 <body class="flex-column min-100-vh">
@@ -18,9 +17,9 @@
     <h1 class="app-title">
       <!-- TODO: What does this `<i>` element do? Where do these classes come from? -->
         <!-- The <i> element refers to icon -->
-      <i class="fab fa-github"></i> Git it Done!
+      <i class="fab "></i> Library Search Tool
     </h1>
-    <p>Search for a GitHub user or click on a language to see a list of repositories and how many open issues they have!
+    <p>Search The library of Congress by subject matter and by content format
     </p>
   </header>
 
@@ -31,34 +30,34 @@
       <div class="card">
         <h3 class="card-header text-uppercase">Search By User</h3>
         <form id="user-form" class="card-body">
-          <label class="form-label" for="username">Username</label>
+          <label class="form-label" for="username">Subject</label>
           <input name="username" id="username" type="text" autofocus="true" class="form-input" />
-          <button type="submit" class="btn">Get User</button>
+          <label class="form-label" for="formatID">content Format</label>
+          <select id="formatID">
+            <option value="maps">maps</option>
+            <option value="audio">audio</option>
+            <option value="audio">audio</option>
+            <option value="photos">photos</option>
+            <option value="manuscripts">manuscripts</option>
+            <option value="newspapers">newspapers</option>
+            <option value="film-and-videos">film-and-videos</option>
+            <option value="notated-music">notated-music</option>
+            <option value="websites">websites</option>
+          </select>
+          <button type="submit" class="btn">Search</button>
         </form>
       </div>
 
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search By Topic</h3>
-        <div id="language-buttons" class="card-body">
-          <!-- TODO: How are the `data-language` attributes being used? -->
-          <!-- Creating variables for the specific languages -->
-          <button data-language="javascript" class="btn">JavaScript</button>
-          <button data-language="html" class="btn">HTML</button>
-          <button data-language="css" class="btn">CSS</button>
-        </div>
-      </div>
+      
     </div>
 
     <div class="col-12 col-md-8">
-      <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
-      <!-- TODO: Why is this `<div>` empty? What goes in here? -->
-        <!-- It is empty to start because there is no content within it. 
-          It refers to an object that populates it with the list of repositories -->
+      <h2 class="subtitle">Showing Results for: <span id="repo-search-term"></span></h2>
       <div id="repos-container" class="list-group"></div>
     </div>
   </main>
 
-  <script src="./assets/js/homepage.js"></script>
+  <script src="./script.js"></script>
 </body>
 
 </html>
